@@ -265,68 +265,68 @@ ul {
   text-decoration: underline;
 }
 /*
- * Sport Scores
+ * 人口统计表格
  *
 */
 
-.scores {
+.population {
   padding-top: 1em;
 }
 @media screen and (min-width:730px) {
-  .scores {
+  .population {
     float:left;
     width: 60%;
   }
   
 }
-.scores__table {
+.population-table {
   width: 100%;
   border-collapse: collapse;
 }
 @media screen and (min-width: 700px) {
-  .scores__table {
+  .population-table {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 418px) {
-  .scores__table .reg-pop {
+  .population-table .reg-pop {
     display: none;
   }
 }
-.scores__table th,
-.scores__table td {
+.population-table th,
+.population-table td {
   padding: 1em;
 }
-.scores__table th {
+.population-table th {
   color: #fff;
   font-weight: 300;
   background-color: #78909c;
 }
-.scores__table tr:nth-child(1) th:nth-child(3) {
+.population-table tr:nth-child(1) th:nth-child(3) {
   text-align: right;
 }
-.scores__table tr:nth-child(1) th:nth-child(5) {
+.population-table tr:nth-child(1) th:nth-child(5) {
   text-align: left;
 }
-.scores__table tr:nth-child(odd) td {
+.population-table tr:nth-child(odd) td {
   background-color: #fff;
 }
 
-.scores__table tr:nth-child(even) td {
+.population-table tr:nth-child(even) td {
   background-color: #eceff1;
 }
-.scores__table td.winner {
+.population-table td.winner {
   font-weight: bold;
 }
-.scores__table td:nth-child(3) {
+.population-table td:nth-child(3) {
   text-align: right;
 }
-.scores__table td:nth-child(5) {
+.population-table td:nth-child(5) {
   text-align: right;
 }
 
-.scores__table td:nth-child(1),
-.scores__table td:nth-child(2) {
+.population-table td:nth-child(1),
+.population-table td:nth-child(2) {
   text-align: center;
 }
 /*
@@ -409,7 +409,7 @@ ul {
 }
 /*
  *
- *Recent News
+ *最近新闻
  *
 */
 .recent-news {
