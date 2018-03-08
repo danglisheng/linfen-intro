@@ -58,7 +58,7 @@ body {
   filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
 
 }
-.scores {
+.population {
   float:left;
   width: 60%;
 }
@@ -71,5 +71,4 @@ body {
 */
 .footer li {
   display: inline-block;  
-  width:33%;
 }

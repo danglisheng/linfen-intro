@@ -23,19 +23,22 @@ var url=baseUrl+Location+key;
 
 var xtr2=new XMLHttpRequest();
 var url2="https://free-api.heweather.com/s6/weather/now?"+Location+key;
-xtr2.onload=function (){
+xtr2.onreadystatechange=function() {
+  if(xtr2.readyState === 4 && xtr2.status ===200) {
   var data=xtr2.responseText;
   var obj=JSON.parse(data);
   var curTmp=obj['HeWeather6'][0]["now"]["tmp"];
   console.log(curTmp);
   var realTimeTmp=document.querySelector(".weather__rt-temp");
   realTimeTmp.innerHTML=curTmp+'&deg;C<br>(实时温度)';
+  }
 }
 xtr2.open('GET',url2,true);
 xtr2.send();
 
-xtr.onload=function() {
-  var data=xtr.responseText;
+xtr.onreadystatechange=function() {
+  if(xtr.readyState ===4 && xtr.status ===200) {
+    var data=xtr.responseText;
   var obj=JSON.parse(data);
   var dailyForecast=obj['HeWeather6'][0]["daily_forecast"];
   console.log(dailyForecast);
@@ -43,14 +46,18 @@ xtr.onload=function() {
   displayTemp(dailyForecast);
   displayDesc(dailyForecast);
   displayWindCondition(dailyForecast);
+  }
 }
 xtr.open('GET',url,true);
 xtr.send();
 function displayDate(dailyForecast) {
   var weatherDate=document.querySelectorAll(".weather__date");
   dailyForecast.forEach(function(value,idx) {
-      var date=new Date(value.date);
-      weatherDate[idx].innerHTML=(date.getMonth()+1)+'月'+date.getDate()+'日';
+      console.log(value.date);
+      var dateArr=value.date.split("-");
+      var month=dateArr[1].replace(/^0+/,"");
+      var day=dateArr[2].replace(/^0+/,"");
+      weatherDate[idx].innerHTML=month+'月'+day+'日';
   })
 }
 function displayTemp(dailyForecast) {
